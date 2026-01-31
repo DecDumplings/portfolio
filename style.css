@@ -580,6 +580,51 @@ nav {
     color: var(--accent-color);
 }
 
+/* Mobile Navigation - Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu a:hover {
+    color: var(--accent-color);
+}
+
 /* Mobile */
 @media (max-width: 768px) {
     .about-grid {
@@ -590,13 +635,67 @@ nav {
         font-size: 2.5rem;
     }
 
+    .hero-image img {
+        width: 280px;
+        height: 280px;
+    }
+
     .nav-links {
         display: none;
-        /* Implement hamburger later */
+    }
+
+    .hamburger {
+        display: flex;
     }
 
     .works-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Fix contact section for mobile */
+    .contact-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .contact-item {
+        min-width: 120px;
+        padding: 20px 15px;
+        flex: 1 1 calc(50% - 15px);
+    }
+
+    .contact-item i {
+        font-size: 1.5rem;
+    }
+
+    .contact-item span {
+        font-size: 0.85rem;
+    }
+
+    /* Stats row on mobile */
+    .stats-row {
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Pillars on mobile */
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hero buttons stack on mobile */
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
     }
 }
 
