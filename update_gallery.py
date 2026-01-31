@@ -1,10 +1,11 @@
 import os
 
-# Paths
-base_dir = r"c:\Users\NoBroker\Documents\Portfolio Nithin Abraham"
+# Paths - use script's directory as base
+base_dir = os.path.dirname(os.path.abspath(__file__))
 image_dir = os.path.join(base_dir, "assets", "images")
 pdf_dir = os.path.join(base_dir, "assets", "pdf")
 html_file = os.path.join(base_dir, "index.html")
+
 
 def update_assets():
     print("Scanning assets...")
