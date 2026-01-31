@@ -395,7 +395,7 @@ nav {
 .experience-container::before {
     content: '';
     position: absolute;
-    left: 20px;
+    left: 10px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -416,8 +416,8 @@ nav {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 11px;
-    /* Center on the 2px line (which is at left:20px? No wait. Line at 20px means center is 21px. Dot width 20px -> left=11px creates center 21px) */
+    left: 1px;
+    /* Center the 20px dot on the 2px line at left:10px -> dot left = 10px - 10px + 1px = 1px */
     top: 5px;
     width: 20px;
     height: 20px;
@@ -473,12 +473,13 @@ nav {
     color: var(--text-secondary);
 }
 
-/* Bullet points as dashes */
+/* Bullet points */
 .timeline-content li::before {
-    content: "—";
+    content: "•";
     color: var(--accent-color);
     margin-right: 10px;
     font-weight: bold;
+    font-size: 1.2em;
 }
 
 /* Works Section */
