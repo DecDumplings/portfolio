@@ -34,9 +34,10 @@
             <div class="logo">Nithin Abraham<span style="color: var(--accent-color)">.</span></div>
             <div class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#works">Works</a>
                 <a href="#about">About</a>
-                <a href="#experience">Experience</a <a href="#contact">Contact</a>
+                <a href="#experience">Experience</a>
+                <a href="#works">Works</a>
+                <a href="#contact">Contact</a>
             </div>
             <!-- Hamburger Menu for Mobile -->
             <div class="hamburger" onclick="toggleMobileMenu()">
@@ -50,9 +51,9 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobile-menu">
         <a href="#home" onclick="closeMobileMenu()">Home</a>
-        <a href="#works" onclick="closeMobileMenu()">Works</a>
         <a href="#about" onclick="closeMobileMenu()">About</a>
         <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+        <a href="#works" onclick="closeMobileMenu()">Works</a>
         <a href="#contact" onclick="closeMobileMenu()">Contact</a>
     </div>
 
@@ -77,75 +78,6 @@
         </div>
     </section>
 
-    <!-- Works Section -->
-    <section id="works" class="section" style="background-color: #0d1117;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Selected Works</h2>
-                <p>A collection of my 3D visualizations, designs, and projects.</p>
-            </div>
-
-            <div class="works-grid">
-
-
-                <!-- Gallery Project (Carousel) -->
-                <!-- Gallery Project (Carousel) -->
-                <div class="work-card gallery-trigger" onclick="openGallery()">
-                    <div class="carousel-mini" id="miniCarousel">
-                        <!-- Populated by JS -->
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category">3D Visualization</div>
-                        <h3>Concept Renders</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Click to view full gallery of 3D
-                            renders.</p>
-                    </div>
-                </div>
-
-                <!-- PDF Drawings Project -->
-                <div class="work-card gallery-trigger" onclick="openPdfViewer()">
-                    <div class="work-media">
-                        <img src="./pdf-thumbnail.png" alt="Technical Drawings"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category">2D Drawings</div>
-                        <h3>Residential Interiors</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Detailed technical drawings &
-                            layouts. Click to view.</p>
-                    </div>
-                </div>
-
-                <!-- 360 Tours Project -->
-                <div class="work-card gallery-trigger" onclick="openPanoViewer()">
-                    <div class="work-media">
-                        <img src="./pano-thumbnail.png" alt="360 Panoramas"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category">Interactive VR</div>
-                        <h3>360° Panoramas</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Immersive architectural
-                            walkthroughs. Click to view.</p>
-                    </div>
-                </div>
-
-
-                <div class="work-card gallery-trigger" onclick="openVideoViewer()">
-                    <div class="work-media">
-                        <img src="./plugin-thumbnail.png" alt="Plugin Development"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category">Software Dev</div>
-                        <h3>Plugin Development</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Explainer videos of custom tools &
-                            plugins. Click to view.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- About Section -->
     <section id="about" class="section">
@@ -391,6 +323,75 @@
         </div>
     </section>
 
+    <!-- Works Section -->
+    <section id="works" class="section" style="background-color: #0d1117;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selected Works</h2>
+                <p>A collection of my 3D visualizations, designs, and projects.</p>
+            </div>
+
+            <div class="works-grid">
+
+
+                <!-- Gallery Project (Carousel) -->
+                <!-- Gallery Project (Carousel) -->
+                <div class="work-card gallery-trigger" onclick="openGallery()">
+                    <div class="carousel-mini" id="miniCarousel">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="work-info">
+                        <div class="work-category">3D Visualization</div>
+                        <h3>Concept Renders</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Click to view full gallery of 3D
+                            renders.</p>
+                    </div>
+                </div>
+
+                <!-- PDF Drawings Project -->
+                <div class="work-card gallery-trigger" onclick="openPdfViewer()">
+                    <div class="work-media">
+                        <img src="./pdf-thumbnail.png" alt="Technical Drawings"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="work-info">
+                        <div class="work-category">2D Drawings</div>
+                        <h3>Residential Interiors</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Detailed technical drawings &
+                            layouts. Click to view.</p>
+                    </div>
+                </div>
+
+                <!-- 360 Tours Project -->
+                <div class="work-card gallery-trigger" onclick="openPanoViewer()">
+                    <div class="work-media">
+                        <img src="./pano-thumbnail.png" alt="360 Panoramas"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="work-info">
+                        <div class="work-category">Interactive VR</div>
+                        <h3>360° Panoramas</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Immersive architectural
+                            walkthroughs. Click to view.</p>
+                    </div>
+                </div>
+
+
+                <div class="work-card gallery-trigger" onclick="openVideoViewer()">
+                    <div class="work-media">
+                        <img src="./plugin-thumbnail.png" alt="Plugin Development"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="work-info">
+                        <div class="work-category">Software Dev</div>
+                        <h3>Plugin Development</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Explainer videos of custom tools &
+                            plugins. Click to view.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
