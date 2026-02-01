@@ -106,7 +106,7 @@
                 <!-- PDF Drawings Project -->
                 <div class="work-card gallery-trigger" onclick="openPdfViewer()">
                     <div class="work-media">
-                        <img src="assets/images/pdf-thumbnail.png" alt="Technical Drawings"
+                        <img src="./pdf-thumbnail.png" alt="Technical Drawings"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="work-info">
@@ -120,7 +120,7 @@
                 <!-- 360 Tours Project -->
                 <div class="work-card gallery-trigger" onclick="openPanoViewer()">
                     <div class="work-media">
-                        <img src="assets/images/pano-thumbnail.png" alt="360 Panoramas"
+                        <img src="./pano-thumbnail.png" alt="360 Panoramas"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="work-info">
@@ -134,7 +134,7 @@
 
                 <div class="work-card gallery-trigger" onclick="openVideoViewer()">
                     <div class="work-media">
-                        <img src="assets/images/plugin-thumbnail.png" alt="Plugin Development"
+                        <img src="./plugin-thumbnail.png" alt="Plugin Development"
                             style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="work-info">
@@ -444,13 +444,16 @@
 
     <!-- 360 Viewer Modal -->
     <div id="pano-modal" class="pano-modal">
+        <span class="close-btn" onclick="closePanoViewer()" style="z-index: 2300;">&times;</span>
         <div class="pano-title" id="pano-title">Project Walkthrough</div>
         <div class="pano-container">
             <div id="panorama"></div>
+            <div class="pano-hint" id="pano-hint">
+                <i class="fas fa-hand-pointer"></i> Drag to explore
+            </div>
         </div>
         <div class="pano-controls">
             <button class="pano-btn" onclick="changePano(-1)">&#10094; Prev View</button>
-            <button class="pano-btn" onclick="closePanoViewer()">Close 360°</button>
             <button class="pano-btn" onclick="changePano(1)">Next View &#10095;</button>
         </div>
     </div>
@@ -620,8 +623,6 @@
     "assets/images/landscape5.JPG",
     "assets/images/LIVING  13052021 004.jpg",
     "assets/images/LIVING  13052021 005.jpg",
-    "assets/images/pano-thumbnail.png",
-    "assets/images/pdf-thumbnail.png",
     "assets/images/Photo from Nupur Biswas(12).jpg",
     "assets/images/Photo from Nupur Biswas(13).jpg",
     "assets/images/Photo from Nupur Biswas(14).jpg",
@@ -636,7 +637,6 @@
     "assets/images/Photo from Nupur Biswas(7).jpg",
     "assets/images/Photo from Nupur Biswas(8).jpg",
     "assets/images/Photo from Nupur Biswas.jpg",
-    "assets/images/plugin-thumbnail.png",
     "assets/images/product-ceramic.jpg",
     "assets/images/SIDE TABLE 01.jpg",
     "assets/images/SIDE TABLE 02.jpg",
@@ -905,6 +905,19 @@
             document.getElementById('pano-modal').classList.add('active');
             document.body.style.overflow = 'hidden';
             loadPano(0);
+
+            // Show hint only on first visit
+            const hasSeenPanoHint = localStorage.getItem('hasSeenPanoHint');
+            if (!hasSeenPanoHint) {
+                const hint = document.getElementById('pano-hint');
+                hint.style.display = 'flex';
+
+                // Hide hint after animation completes (4 seconds)
+                setTimeout(() => {
+                    hint.style.display = 'none';
+                    localStorage.setItem('hasSeenPanoHint', 'true');
+                }, 4000);
+            }
         }
 
         function closePanoViewer() {
